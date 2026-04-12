@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>FinSphere Solutions — FinSage</title>
+  <meta name="description" content="FinSage by FinSphere Solutions — IFRS-aware accounting & tax engine for practitioners and enterprises.">
+  <style>
+    :root{--bg:#ffffff;--text:#0f172a;--muted:#475569;--blue:#2563eb;--green:#10b981;--radius:14px}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:var(--bg);color:var(--text)}
+    header{display:flex;justify-content:space-between;align-items:center;padding:18px 28px;border-bottom:1px solid #eef2f7;position:sticky;top:0;background:rgba(255,255,255,0.8)}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--blue),var(--green));display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+    .hero{padding:72px 20px;text-align:center;max-width:920px;margin:0 auto}
+    .title{font-size:40px;margin:0 0 12px;font-weight:800}
+    .subtitle{color:var(--muted);font-size:17px;margin-bottom:22px}
+    .cta{background:var(--blue);color:white;padding:12px 26px;border-radius:999px;text-decoration:none;font-weight:600;display:inline-block}
+    .coming{display:block;margin-top:10px;color:var(--muted);font-size:13px}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:1100px;margin:40px auto;padding:0 20px}
+    .card{background:white;padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.06);border:1px solid #f1f5f9}
+    .card h3{margin:0 0 6px;color:var(--blue)}
+    .ifrs{padding:36px 20px;background:#f8fafc;margin-top:18px}
+    .center{max-width:820px;margin:0 auto;text-align:center}
+    footer{padding:22px 20px;text-align:center;color:var(--muted);font-size:14px;border-top:1px solid #eef2f7;margin-top:30px}
+    @media (max-width:900px){.features{grid-template-columns:1fr}.title{font-size:30px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">FS</div>
+      <div>
+        <div style="font-weight:700">FinSphere Solutions</div>
+        <div style="font-size:13px;color:var(--muted)">Product: FinSage — finspheresolutions.com</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#features" style="margin-left:16px;color:var(--muted);text-decoration:none">Features</a>
+      <a href="#ifrs" style="margin-left:16px;color:var(--muted);text-decoration:none">IFRS</a>
+      <a href="#contact" style="margin-left:16px;color:var(--muted);text-decoration:none">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1 class="title">Accounting that thinks ahead — FinSage</h1>
+      <p class="subtitle">An IFRS-aware accounting engine for practitioners and enterprises. Automate leases, VAT, tax submissions, inventory valuation and real-time financial statement notes.</p>
+      <a class="cta" href="#contact">Start Free Trial</a>
+      <span class="coming">Coming Soon</span>
+    </section>
+
+    <section id="features" class="features" aria-label="features">
+      <div class="card">
+        <h3>Real-time Notes</h3>
+        <p style="color:#475569;margin:0">Disclosures update as you post. Leases, PPE, deferred tax and inventory schedules auto-populated for fast reporting.</p>
+      </div>
+      <div class="card">
+        <h3>Lease Wizard</h3>
+        <p style="color:#475569;margin:0">Lessee-focused wizard to create ROU assets, lease liabilities and amortization schedules with compliant journal templates.</p>
+      </div>
+      <div class="card">
+        <h3>VAT & Tax Engine</h3>
+        <p style="color:#475569;margin:0">VAT splitting at posting, automatic reconciliation, provisional and year-end submission exports.</p>
+      </div>
+    </section>
+
+    <section id="ifrs" class="ifrs">
+      <div class="center">
+        <h2 style="margin-top:0;color:var(--text)">IFRS Automation</h2>
+        <p style="color:#475569">FinSage maps transactions to standards including IFRS 16, IAS 16, IAS 38, IFRS 9, IAS 12 and more — each with a guided wizard and schedule-based disclosures.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="center" style="padding:36px 20px">
+      <h3>Join the pilot</h3>
+      <p style="color:#475569">Two free pilot slots: one practitioner, one enterprise. Tell us about your use case and we'll prioritize access.</p>
+      <a class="cta" href="mailto:contact@finspheresolutions.com">Contact Us</a>
+      <div style="margin-top:12px;color:#475569">Or email: contact@finspheresolutions.com</div>
+    </section>
+  </main>
+
+  <footer>
+    © FinSphere Solutions — finspheresolutions.com • Built for precise accounting & trusted reports
+  </footer>
+</body>
+</html>
