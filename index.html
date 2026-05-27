@@ -636,6 +636,24 @@
       width:100%;
     }
   }
+
+  .footer-legal-links{
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+    align-items:center;
+  }
+
+  .footer-legal-links a{
+    color:var(--muted-2);
+    text-decoration:none;
+    transition:color .2s ease;
+    font-size:0.92rem;
+  }
+
+  .footer-legal-links a:hover{
+    color:var(--white);
+  }
 </style>
 </head>
 <body>
@@ -1005,8 +1023,19 @@
 
   <footer>
     <div class="footer-wrap">
-      <div>© FinSphere Solutions — FinSage</div>
-      <div>info@finspheresolutions.com · +266 62775416 / +266 57048327</div>
+      <div>
+        © FinSphere Solutions — FinSage
+      </div>
+
+      <div>
+        info@finspheresolutions.com · +266 62775416 / +266 57048327
+      </div>
+
+      <div class="footer-legal-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+        <a href="popia.html">POPIA Compliance</a>
+      </div>
     </div>
   </footer>
 
