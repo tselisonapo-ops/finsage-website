@@ -654,6 +654,93 @@
   .footer-legal-links a:hover{
     color:var(--white);
   }
+
+  .dashboard-showcase{
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,0.08);
+    background:#06111f;
+  }
+
+  .dashboard-image-wrap::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+      to top,
+      rgba(6,17,31,0.15),
+      rgba(6,17,31,0)
+    );
+    pointer-events:none;
+  }
+
+  .dashboard-image-wrap img{
+    width:100%;
+    display:block;
+    transition:transform .45s ease;
+  }
+
+  .dashboard-card:hover .dashboard-image-wrap img{
+    transform:scale(1.02);
+  }
+
+  .dashboard-mini-grid{
+    margin-top:20px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:14px;
+  }
+
+  .dashboard-mini{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:18px;
+    padding:14px;
+  }
+
+  .dashboard-mini strong{
+    display:block;
+    color:white;
+    margin-bottom:8px;
+  }
+
+  .dashboard-mini span{
+    color:var(--muted-2);
+    font-size:0.92rem;
+    line-height:1.6;
+  }
+
+  .dashboard-wide-showcase{
+    margin-top:40px;
+    padding:32px;
+    border-radius:34px;
+    background:linear-gradient(
+      135deg,
+      rgba(7,16,34,0.94),
+      rgba(12,44,72,0.86)
+    );
+    border:1px solid rgba(255,255,255,0.10);
+    overflow:hidden;
+    position:relative;
+  }
+
+  .dashboard-wide-showcase::before{
+    content:"";
+    position:absolute;
+    width:320px;
+    height:320px;
+    border-radius:50%;
+    top:-120px;
+    right:-80px;
+    background:radial-gradient(circle,
+    rgba(89,214,173,0.22),transparent 70%);
+  }
+
+  .dashboard-wide-showcase img{
+    width:100%;
+    border-radius:24px;
+    border:1px solid rgba(255,255,255,0.08);
+    box-shadow:0 30px 80px rgba(0,0,0,0.35);
+  }
 </style>
 </head>
 <body>
@@ -746,6 +833,225 @@
           </div>
         </aside>
       </div>
+    </section>
+
+    <section class="dashboard-showcase" id="dashboards">
+
+      <div class="container">
+
+        <div class="section-head">
+          <h2>Powerful Dashboards. Unified Experience.</h2>
+          <p>
+            Explore FinSage's integrated accounting, reporting, governance,
+            compliance and practitioner intelligence environment.
+          </p>
+        </div>
+
+        <div class="dashboard-grid">
+
+          <!-- ACCOUNTING DASHBOARD -->
+          <div class="dashboard-card">
+
+            <div class="dashboard-badge">
+              Accounting & Financial Operations
+            </div>
+
+            <h3>Accounting Control Center</h3>
+
+            <p>
+              Centralised accounting operations with real-time reporting,
+              workflows, financial visibility and operational controls.
+            </p>
+
+            <div class="dashboard-image-wrap">
+              <img src="assets/accounting-dashboard.png" alt="Accounting Dashboard">
+            </div>
+
+          </div>
+
+          <!-- PRACTITIONER DASHBOARD -->
+          <div class="dashboard-card">
+
+            <div class="dashboard-badge">
+              Practitioner Operations Suite
+            </div>
+
+            <h3>Practice & Engagement Intelligence</h3>
+
+            <p>
+              Manage engagements, workflow governance, teams, reviews and
+              sign-offs across your practice environment.
+            </p>
+
+            <div class="dashboard-image-wrap">
+              <img src="assets/practitioner-dashboard.png" alt="Practitioner Dashboard">
+            </div>
+
+          </div>
+
+          <!-- LEASE WIZARD -->
+          <div class="dashboard-card">
+
+            <div class="dashboard-badge">
+              IFRS 16 Lease Accounting
+            </div>
+
+            <h3>Lease Wizard</h3>
+
+            <p>
+              Automated lease schedules, ROU calculations, liabilities,
+              journals and reporting workflows.
+            </p>
+
+            <div class="dashboard-image-wrap">
+              <img src="assets/lease-wizard.png" alt="Lease Wizard">
+            </div>
+
+          </div>
+
+          <!-- FINANCIAL STATEMENTS -->
+          <div class="dashboard-card">
+
+            <div class="dashboard-badge">
+              Financial Reporting
+            </div>
+
+            <h3>Financial Statements</h3>
+
+            <p>
+              Generate compliant IFRS financial statements with integrated
+              disclosures, notes and reporting structures.
+            </p>
+
+            <div class="dashboard-image-wrap">
+              <img src="assets/financial-statements.png" alt="Financial Statements">
+            </div>
+
+          </div>
+
+          <!-- REVENUE RECOGNITION -->
+          <div class="dashboard-card">
+
+            <div class="dashboard-badge">
+              IFRS 15 Revenue Recognition
+            </div>
+
+            <h3>Revenue Recognition</h3>
+
+            <p>
+              Track obligations, contracts, billing progress and revenue
+              recognition workflows in real time.
+            </p>
+
+            <div class="dashboard-image-wrap">
+              <img src="assets/revenue-recognition.png" alt="Revenue Recognition">
+            </div>
+
+          </div>
+
+          <!-- VAT & TAX -->
+          <div class="dashboard-card">
+
+            <div class="dashboard-badge">
+              Compliance & Tax
+            </div>
+
+            <h3>VAT & Tax Management</h3>
+
+            <p>
+              Simplify VAT submissions, tax packs, compliance workflows
+              and audit-ready reporting.
+            </p>
+
+            <div class="dashboard-image-wrap">
+              <img src="assets/vat-tax.png" alt="VAT & Tax">
+            </div>
+
+          </div>
+
+          <!-- FIXED ASSETS -->
+          <div class="dashboard-card">
+
+            <div class="dashboard-badge">
+              Asset Management
+            </div>
+
+            <h3>Fixed Assets Register</h3>
+
+            <p>
+              Manage depreciation schedules, disposals, acquisitions,
+              registers and asset lifecycle tracking.
+            </p>
+
+            <div class="dashboard-image-wrap">
+              <img src="assets/fixed-assets.png" alt="Fixed Assets">
+            </div>
+
+          </div>
+
+          <!-- ENGAGEMENT OVERVIEW -->
+          <div class="dashboard-card">
+
+            <div class="dashboard-badge">
+              Engagement Operations
+            </div>
+
+            <h3>Engagement Overview</h3>
+
+            <p>
+              Full engagement lifecycle visibility with assignments,
+              deadlines, deliverables and review management.
+            </p>
+
+            <div class="dashboard-image-wrap">
+              <img src="assets/engagement-overview.png" alt="Engagement Overview">
+            </div>
+
+          </div>
+
+          <!-- PORTFOLIO REVIEW -->
+          <div class="dashboard-card">
+
+            <div class="dashboard-badge">
+              Portfolio Intelligence
+            </div>
+
+            <h3>Portfolio Review</h3>
+
+            <p>
+              Monitor portfolio health, readiness, blockers, escalations
+              and engagement risks across the firm.
+            </p>
+
+            <div class="dashboard-image-wrap">
+              <img src="assets/portfolio-review.png" alt="Portfolio Review">
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- FULL PLATFORM SHOWCASE -->
+        <div class="dashboard-wide-showcase">
+
+          <div class="section-head" style="margin-bottom:24px;">
+
+            <h2>One connected financial ecosystem</h2>
+
+            <p>
+              FinSage unifies accounting operations, governance,
+              compliance, engagement management and practitioner
+              intelligence into one seamless platform.
+            </p>
+
+          </div>
+
+          <img src="assets/full-platform-overview.png" alt="FinSage Platform Overview">
+
+        </div>
+
+      </div>
+
     </section>
 
     <section id="platform" class="section">
