@@ -4,154 +4,138 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>FinSphere Solutions | Intelligent Accounting. Always Audit-Ready.</title>
-  <meta name="description" content="A modern accounting platform designed for continuous reporting, governance, and IFRS-aligned workflows.">
+  <meta name="description" content="FinSage by FinSphere Solutions — governance-first accounting for continuous reporting, IFRS-aligned workflows, audit readiness and operational control.">
 
   <link rel="icon" type="image/png" href="assets/logo.png">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
   :root {
-    --navy: #0a1638;
-    --blue: #2f63c9;
-    --teal: #43c7b0;
-    --slate: #475569;
-    --light-bg: #f8fbff;
-    --white: #ffffff;
-    --border: rgba(10, 22, 56, 0.08);
-    --shadow: 0 20px 60px rgba(0, 0, 0, 0.05);
+    --navy:#0a1638;
+    --deep:#071022;
+    --blue:#2f63c9;
+    --sky:#4b90d2;
+    --teal:#43c7b0;
+    --mint:#59d6ad;
+    --soft:#edf3f8;
+    --white:#f8fbff;
+    --text:#e8f0f8;
+    --muted:#bfd0df;
+    --muted-2:#97abc0;
+    --panel:rgba(8,16,34,0.46);
+    --panel-strong:rgba(8,16,34,0.68);
+    --border:rgba(255,255,255,0.10);
+    --shadow:0 25px 80px rgba(0,0,0,0.26);
+    --radius-xl:32px;
+    --radius-lg:24px;
+    --radius-md:18px;
+    --max:1600px;
   }
 
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    color: var(--navy);
-    background-color: var(--white);
-    line-height: 1.7;
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    color:var(--text);
+    /* RESTORED ORIGINAL BACKGROUND */
+    background:
+      radial-gradient(circle at 14% 18%, rgba(89,214,173,0.22), transparent 22%),
+      radial-gradient(circle at 83% 14%, rgba(75,144,210,0.18), transparent 24%),
+      radial-gradient(circle at 58% 76%, rgba(47,99,201,0.15), transparent 26%),
+      linear-gradient(135deg, #051126 0%, #0b1d49 24%, #12356d 48%, #0f566f 74%, #081224 100%);
+    min-height:100vh;
   }
 
-  /* Professional Grid Background Overlay */
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background-image: linear-gradient(var(--light-bg) 1.5px, transparent 1.5px), linear-gradient(90deg, var(--light-bg) 1.5px, transparent 1.5px);
-    background-size: 60px 60px;
-    z-index: -1;
+  /* RESTORED ORIGINAL GRID */
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    background:
+      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size:48px 48px;
+    mask-image:linear-gradient(to bottom, rgba(0,0,0,0.22), rgba(0,0,0,0.02));
+    z-index:0;
   }
 
-  .container { width: min(1300px, 90%); margin: 0 auto; }
+  .container{ width:min(1600px, calc(100% - 72px)); margin:0 auto; position: relative; z-index: 1; }
 
-  /* HEADER & NAVIGATION */
-  header {
-    height: 90px;
-    display: flex;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(12px);
-    z-index: 1000;
-    border-bottom: 1px solid var(--border);
+  /* HEADER & LOGO FIX */
+  header{
+    position:sticky;
+    top:0;
+    z-index:100;
+    backdrop-filter:blur(14px);
+    background:rgba(5,10,22,0.42);
+    border-bottom:1px solid var(--border);
   }
-  .header-inner { display: flex; justify-content: space-between; align-items: center; width: 100%; }
-  .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; }
-  .nav { display: flex; gap: 30px; align-items: center; }
-  .nav a { text-decoration: none; color: var(--navy); font-weight: 500; font-size: 0.9rem; transition: 0.3s; }
-  .nav a:hover { color: var(--blue); }
+  .header-inner{ height:82px; display:flex; align-items:center; justify-content:space-between; }
+  .brand{ display:flex; align-items:center; gap:14px; text-decoration:none; }
+  
+  /* FIXED LOGO BOX */
+  .brand-logo{
+    width:48px; height:48px; border-radius:14px; overflow:hidden; flex:0 0 48px;
+    background:rgba(255,255,255,0.08); display:grid; place-items:center; border:1px solid var(--border);
+  }
+  .brand-logo img{ width:100%; height:100%; object-fit:cover; }
+  .brand-copy strong{ display:block; font-size:1rem; color:var(--white); }
+  .brand-copy span{ display:block; font-size:0.8rem; color:var(--muted-2); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;}
+
+  .nav{ display:flex; align-items:center; gap:22px; }
+  .nav a{ text-decoration:none; color:var(--muted); font-size:0.96rem; transition:0.2s; }
+  .nav a:hover{ color:var(--white); }
 
   .btn {
-    background: var(--navy);
-    color: white !important;
-    padding: 14px 28px;
-    border-radius: 6px;
-    font-weight: 700;
-    text-decoration: none;
-    transition: 0.3s;
-    display: inline-flex;
-    align-items: center;
+    text-decoration:none; border-radius:999px; padding:13px 25px; font-weight:700; font-size:0.95rem;
+    color:white; background:linear-gradient(135deg,var(--blue),var(--teal),var(--mint));
+    box-shadow:0 16px 45px rgba(47,99,201,0.30); transition: 0.3s;
   }
-  .btn:hover { background: var(--blue); transform: translateY(-2px); box-shadow: 0 10px 25px rgba(47,99,201,0.2); }
+  .btn:hover{ transform:translateY(-2px); box-shadow:0 24px 56px rgba(47,99,201,0.38); }
 
-  /* HERO SECTION */
-  .hero { padding: 120px 0 80px; text-align: center; }
-  .hero h1 {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    line-height: 1.15;
-    margin-bottom: 24px;
-    color: var(--navy);
+  /* HERO */
+  .hero{ padding: clamp(60px, 8vw, 120px) 0 60px; text-align: center; }
+  .hero h1{ font-size:clamp(2.5rem, 6vw, 4.5rem); line-height:0.96; letter-spacing:-0.04em; margin-bottom: 24px; }
+  .hero-gradient{
+    background:linear-gradient(135deg,#ecf4ff 5%, #93c6ff 30%, #67d4c9 58%, #7df0be 92%);
+    -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
   }
-  .hero-gradient {
-    background: linear-gradient(135deg, var(--blue), var(--teal));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  .hero p { font-size: 1.3rem; color: var(--slate); max-width: 800px; margin: 0 auto 40px; }
+  .hero p.lead{ font-size:1.25rem; color:var(--muted); max-width:850px; margin:0 auto 40px; line-height: 1.7; }
 
-  /* SLIDER SECTION */
-  .slider-section { padding: 60px 0; background: var(--light-bg); border-radius: 40px; margin: 40px 0; }
+  /* SLIDER STYLING */
   .slider-container {
-    position: relative;
-    max-width: 1100px;
-    margin: 0 auto;
-    border-radius: 16px;
-    overflow: hidden;
+    max-width: 1100px; margin: 40px auto; border-radius: var(--radius-xl); overflow: hidden;
+    background: var(--panel); border: 1px solid var(--border); backdrop-filter: blur(20px);
     box-shadow: var(--shadow);
-    background: #fff;
-    border: 1px solid var(--border);
   }
-  .slides { display: none; width: 100%; animation: fade 1.5s; }
+  .slides { display: none; width: 100%; animation: fade 1s; }
   .slides img { width: 100%; display: block; }
-  .slide-label { background: var(--navy); color: white; padding: 12px; font-weight: 700; text-align: center; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; }
-  
+  .slide-info { background: var(--panel-strong); padding: 15px; text-align: center; font-weight: 700; color: var(--mint); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em; border-bottom: 1px solid var(--border); }
   @keyframes fade { from {opacity: .4} to {opacity: 1} }
 
-  /* CONTENT BLOCKS */
-  .section { padding: 100px 0; }
-  .section-alt { background: var(--light-bg); }
-  .tagline { color: var(--blue); font-weight: 800; text-transform: uppercase; letter-spacing: 0.15em; font-size: 0.75rem; margin-bottom: 16px; display: block; }
-  .section h2 { font-size: 2.5rem; margin-bottom: 30px; letter-spacing: -0.02em; }
-
-  /* DELIVERABLES GRID */
-  .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
-  .info-card { padding: 40px; background: white; border-radius: 16px; border: 1.5px solid var(--border); transition: 0.3s; }
-  .info-card:hover { border-color: var(--blue); box-shadow: var(--shadow); }
-  .info-card h3 { margin: 0 0 15px; font-size: 1.3rem; font-weight: 700; color: var(--navy); }
-  .info-card p { color: var(--slate); font-size: 0.95rem; margin: 0; }
-
-  /* USER TYPES */
-  .user-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 50px; }
-  .user-card { padding: 50px; border-radius: 20px; border: 1.5px solid var(--border); background: white; }
-  .user-card h3 { color: var(--blue); margin-top: 0; }
-  .user-card ul { padding-left: 20px; color: var(--slate); }
-
-  /* ABOUT/GOVERNANCE BOX */
-  .feature-box {
-    background: var(--navy);
-    color: white;
-    padding: 80px;
-    border-radius: 30px;
-    margin: 80px 0;
+  /* SECTIONS */
+  .section { padding: 80px 0; }
+  .tagline { color: var(--mint); font-weight: 800; text-transform: uppercase; letter-spacing: 0.15em; font-size: 0.75rem; margin-bottom: 12px; display: block; }
+  .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 24px; }
+  
+  .glass-card {
+    background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius-lg);
+    padding: 40px; backdrop-filter: blur(14px); transition: 0.3s;
   }
-  .feature-box h2 { color: var(--teal); margin-top: 0; }
-  .feature-box p { color: rgba(255,255,255,0.8); font-size: 1.1rem; }
+  .glass-card:hover { border-color: var(--mint); background: var(--panel-strong); transform: translateY(-5px); }
+  .glass-card h3 { color: var(--white); margin: 0 0 15px; font-size: 1.3rem; }
 
-  /* FOOTER */
-  footer { background: #040816; color: white; padding: 100px 0 50px; }
-  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 50px; }
-  .footer-logo img { height: 50px; margin-bottom: 20px; }
-  .footer-col h4 { margin-bottom: 25px; color: var(--teal); font-size: 0.9rem; text-transform: uppercase; }
-  .footer-col a { display: block; color: rgba(255,255,255,0.6); text-decoration: none; margin-bottom: 12px; font-size: 0.9rem; }
-  .footer-col a:hover { color: white; }
-  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; margin-top: 60px; display: flex; justify-content: space-between; font-size: 0.85rem; color: rgba(255,255,255,0.4); }
+  .user-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px; }
+  .user-card { padding: 45px; border-radius: var(--radius-xl); border: 1px solid var(--border); background: var(--panel); }
+  .user-card h3 { color: var(--teal); font-size: 1.6rem; margin-top: 0; }
+
+  footer { padding: 80px 0 40px; border-top: 1px solid var(--border); margin-top: 60px; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.05); padding-top: 30px; margin-top: 50px; display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--muted-2); }
 
   @media (max-width: 900px) {
     .grid-3, .user-grid, .footer-grid { grid-template-columns: 1fr; }
-    .feature-box { padding: 40px; }
     .nav { display: none; }
   }
 </style>
@@ -161,16 +145,16 @@
   <header>
     <div class="container header-inner">
       <a href="index.html" class="brand">
-        <img src="assets/logo.png" alt="FinSphere logo">
-        <div style="line-height: 1.1;">
-            <strong style="display: block; font-size: 1.1rem;">FinSphere Solutions</strong>
-            <span style="font-size: 0.7rem; font-weight: 700; color: var(--slate); letter-spacing: 0.05em;">FINSAGE PLATFORM</span>
+        <div class="brand-logo"><img src="assets/logo.png" alt="FinSage Logo"></div>
+        <div class="brand-copy">
+            <strong>FinSphere Solutions</strong>
+            <span>FinSage — Governance-First</span>
         </div>
       </a>
       <nav class="nav">
         <a href="#deliverables">Deliverables</a>
         <a href="#about">About Us</a>
-        <a href="#audiences">Solutions</a>
+        <a href="#solutions">Solutions</a>
         <a href="pricing.html">Pricing</a>
         <a href="registration.html" class="btn">Get Started</a>
       </nav>
@@ -178,85 +162,74 @@
   </header>
 
   <main>
-    <!-- HERO SECTION -->
     <section class="hero">
       <div class="container">
+        <span class="tagline">Next-Gen Accounting Architecture</span>
         <h1>Intelligent Accounting. <br><span class="hero-gradient">Always Audit-Ready.</span></h1>
-        <p>A modern accounting platform designed to deliver accurate financial statements and real-time disclosures. Consistent, controlled, and audit-ready 365 days a year.</p>
-        <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-            <a href="registration.html" class="btn">Start Your Free Trial</a>
-            <a href="#about" style="color: var(--navy); text-decoration: none; font-weight: 700; padding: 14px 0;">Learn Our Philosophy →</a>
+        <p class="lead">A modern accounting platform designed to deliver accurate financial statements and real-time disclosures. Consistent, controlled, and transparent at every stage.</p>
+        <div style="display: flex; gap: 20px; justify-content: center;">
+            <a href="registration.html" class="btn">Start Free Trial</a>
         </div>
       </div>
     </section>
 
-    <!-- AUTOMATIC SLIDER (THE TOUR) -->
-    <section class="container" id="tour">
-        <div class="slider-section">
-            <div style="text-align: center; margin-bottom: 40px;">
-                <span class="tagline">The Interface</span>
-                <h2 style="margin-top: 0;">Experience the Platform</h2>
+    <!-- AUTOMATIC SLIDER SECTION -->
+    <section class="container">
+        <div class="slider-container">
+            <div class="slides">
+                <div class="slide-info">Accounting Command Center</div>
+                <img src="assets/accounting-command-center.png" alt="Command Center">
             </div>
-            <div class="slider-container">
-                <div class="slides">
-                    <div class="slide-label">Accounting Command Center</div>
-                    <img src="assets/accounting-command-center.png" alt="Accounting Command Center">
-                </div>
-                <div class="slides">
-                    <div class="slide-label">IFRS 16 Lease Wizard</div>
-                    <img src="assets/ifrs16-lease-wizard.png" alt="IFRS 16 Lease Wizard">
-                </div>
-                <div class="slides">
-                    <div class="slide-label">Revenue Recognition (IFRS 15)</div>
-                    <img src="assets/revenue-recognition.png" alt="Revenue Recognition">
-                </div>
-                <div class="slides">
-                    <div class="slide-label">Practitioner Dashboard</div>
-                    <img src="assets/practitioner-dashboard.png" alt="Practitioner Dashboard">
-                </div>
-                <div class="slides">
-                    <div class="slide-label">Fixed Asset Register</div>
-                    <img src="assets/fixed-assets-register.png" alt="Fixed Assets Register">
-                </div>
-                <div class="slides">
-                    <div class="slide-label">Financial Statement Viewer</div>
-                    <img src="assets/financial-statements.png" alt="Financial Statements">
-                </div>
+            <div class="slides">
+                <div class="slide-info">IFRS 16 Lease Wizard</div>
+                <img src="assets/ifrs16-lease-wizard.png" alt="Lease Wizard">
+            </div>
+            <div class="slides">
+                <div class="slide-info">Revenue Recognition (IFRS 15)</div>
+                <img src="assets/revenue-recognition.png" alt="Revenue Recognition">
+            </div>
+            <div class="slides">
+                <div class="slide-info">Practitioner Portfolio Intelligence</div>
+                <img src="assets/practitioner-dashboard.png" alt="Practitioner Dashboard">
+            </div>
+            <div class="slides">
+                <div class="slide-info">Fixed Asset Register</div>
+                <img src="assets/fixed-assets-register.png" alt="Fixed Assets">
+            </div>
+            <div class="slides">
+                <div class="slide-info">Financial Statement Viewer</div>
+                <img src="assets/financial-statements.png" alt="Financial Statements">
             </div>
         </div>
     </section>
 
-    <!-- WHAT THE PLATFORM DELIVERS -->
+    <!-- DELIVERABLES -->
     <section class="section" id="deliverables">
         <div class="container">
-            <div style="max-width: 800px; margin-bottom: 60px;">
-                <span class="tagline">Operational Excellence</span>
-                <h2>What the Platform Delivers</h2>
-                <p style="font-size: 1.15rem; color: var(--slate);">Balancing operational efficiency with institutional governance to address the real challenges of modern finance teams.</p>
-            </div>
-            
+            <span class="tagline">The Platform</span>
+            <h2 style="font-size: 2.5rem; margin-bottom: 40px;">What the Platform Delivers</h2>
             <div class="grid-3">
-                <div class="info-card">
-                    <h3>End-to-End Accounting</h3>
-                    <p>Support the full accounting lifecycle: capture transactions, manage periods, process adjustments, and produce reports in one environment.</p>
+                <div class="glass-card">
+                    <h3>End-to-End Coverage</h3>
+                    <p>Support the full accounting lifecycle: capture transactions, manage periods, and produce reports in one controlled environment.</p>
                 </div>
-                <div class="info-card">
+                <div class="glass-card">
                     <h3>Real-Time Intelligence</h3>
-                    <p>Reporting outputs remain aligned as transactions post, reducing reliance on manual month-end reconciliations.</p>
+                    <p>Reporting outputs stay aligned as financial information evolves, reducing reliance on manual reconciliations.</p>
                 </div>
-                <div class="info-card">
+                <div class="glass-card">
                     <h3>Controlled Access</h3>
-                    <p>Role-based access ensures users only interact with appropriate functions, reducing operational and fraud risk.</p>
+                    <p>Role-based security ensures users only interact with appropriate functions, strengthening internal control.</p>
                 </div>
-                <div class="info-card">
+                <div class="glass-card">
                     <h3>Professional Statements</h3>
-                    <p>Generate Balance Sheets, P&L, and Cash Flow Statements with integrated disclosures at any point in the period.</p>
+                    <p>Generate Balance Sheets, P&L, and Cash Flow Statements with integrated disclosures at any point.</p>
                 </div>
-                <div class="info-card">
-                    <h3>Automated Period Closures</h3>
-                    <p>Recurring processes such as amortisation and depreciation are automatically processed as accounting periods advance.</p>
+                <div class="glass-card">
+                    <h3>Automated Period Processes</h3>
+                    <p>Recurring processes such as amortisation and depreciation are automatically handled as periods advance.</p>
                 </div>
-                <div class="info-card">
+                <div class="glass-card">
                     <h3>Audit-Focused Governance</h3>
                     <p>Strict data integrity rules to support transparency, traceability, and permanent audit readiness.</p>
                 </div>
@@ -265,22 +238,22 @@
     </section>
 
     <!-- ABOUT US PHILOSOPHY -->
-    <section class="section section-alt" id="about">
+    <section class="section" id="about">
         <div class="container">
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
                 <div>
-                    <span class="tagline">Our Vision</span>
-                    <h2>Building a new generation of accounting architecture.</h2>
-                    <p>Traditional systems focus primarily on transaction capture, leaving reporting and compliance as manual, end-of-period exercises. </p>
-                    <p><strong>FinSage changes that.</strong> We believe financial reporting should be continuous, controlled, and transparent — not rushed. By embedding governance into the core flow, we help organizations maintain accuracy throughout the reporting cycle.</p>
+                    <span class="tagline">Our Philosophy</span>
+                    <h2 style="font-size: 2.5rem;">A new generation of accounting architecture.</h2>
+                    <p>Traditional systems focus on transaction capture, leaving reporting and compliance as manual, end-of-period exercises. </p>
+                    <p><strong>FinSage changes that.</strong> We believe financial reporting should be continuous, controlled, and transparent — not rushed. Our architecture ensures integrity 365 days a year.</p>
                 </div>
-                <div class="info-card" style="background: var(--navy); color: white;">
-                    <h3 style="color: var(--teal);">Security & Data Integrity</h3>
-                    <p style="color: rgba(255,255,255,0.7);">Posted transactions cannot be deleted. Corrections require reversing entries, ensuring a complete audit trail.</p>
-                    <ul style="margin-top: 20px; font-size: 0.9rem; color: var(--teal);">
+                <div class="glass-card" style="border-color: var(--teal);">
+                    <h3 style="color: var(--mint);">Security & Integrity</h3>
+                    <p>Posted transactions cannot be deleted. Corrections require reversing entries, ensuring a complete audit trail.</p>
+                    <ul style="color: var(--teal); font-size: 0.9rem; padding-left: 20px;">
                         <li>AES-256 Bank-Grade Encryption</li>
                         <li>Mandatory MFA & Session Controls</li>
-                        <li>90-Day Forced Password Rotation</li>
+                        <li>AWS Secure Cloud Infrastructure</li>
                     </ul>
                 </div>
             </div>
@@ -288,78 +261,48 @@
     </section>
 
     <!-- USER TYPES -->
-    <section class="section" id="audiences">
+    <section class="section" id="solutions">
         <div class="container">
-            <div style="text-align: center; max-width: 800px; margin: 0 auto 60px;">
+            <div style="text-align: center; margin-bottom: 50px;">
                 <span class="tagline">Solutions</span>
-                <h2>Designed for Two Core Audiences</h2>
-                <p>The platform is intended for professional service environments and internal organizational reporting teams.</p>
+                <h2 style="font-size: 2.5rem;">Designed for Professionals</h2>
             </div>
-            
             <div class="user-grid">
-                <div class="user-card" style="background: #eef4ff; border-color: #d0e1ff;">
-                    <h3 style="color: var(--blue);">Accounting Practitioners</h3>
-                    <p>Designed for professional accountants managing multiple client entities. Supports multi-entity engagement management, practitioner intelligence, and sign-off readiness.</p>
-                    <ul>
-                        <li>Portfolio review & health monitoring</li>
-                        <li>Team assignment & capacity planning</li>
-                        <li>Risk & Independence assessments</li>
-                    </ul>
+                <div class="user-card">
+                    <h3>Accounting Practitioners</h3>
+                    <p>Designed for professional accountants managing multiple entities. Supports portfolio-wide health monitoring, team allocation, and sign-off readiness.</p>
                 </div>
-                <div class="user-card" style="background: #f0fdfa; border-color: #ccfbf1;">
-                    <h3 style="color: var(--teal);">Enterprise Organizations</h3>
-                    <p>Designed for internal corporate reporting. Supports primary entities and related reporting structures such as subsidiaries, branches, or segments.</p>
-                    <ul>
-                        <li>Subsidiary consolidation logic</li>
-                        <li>Internal organizational controls</li>
-                        <li>Real-time management reporting</li>
-                    </ul>
+                <div class="user-card">
+                    <h3>Enterprise Organizations</h3>
+                    <p>Designed for internal corporate reporting. Supports primary entities and complex related reporting structures like subsidiaries or branches.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CONTACT CTA -->
-    <section class="section">
-        <div class="container" style="text-align: center;">
-            <div class="info-card" style="padding: 80px 40px; background: linear-gradient(135deg, var(--navy), #122a63); border: none;">
-                <h2 style="color: white; margin-top: 0;">Ready for a clearer financial foundation?</h2>
-                <p style="color: rgba(255,255,255,0.7); max-width: 600px; margin: 0 auto 40px;">Contact our team to discuss your specific use case or start your free 14-day trial today.</p>
-                <div style="display: flex; gap: 15px; justify-content: center;">
-                    <a href="registration.html" class="btn" style="background: var(--teal); color: var(--navy) !important;">Start Free Trial</a>
-                    <a href="mailto:info@finspheresolutions.com" class="btn" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);">Contact Sales</a>
-                </div>
-            </div>
-        </div>
-    </section>
   </main>
 
   <footer>
     <div class="container">
         <div class="footer-grid">
             <div class="footer-col">
-                <img src="assets/logo.png" alt="FinSphere Logo" height="50">
-                <p style="color: rgba(255,255,255,0.5); font-size: 0.9rem; margin-top: 20px;">Governance-first financial reporting architecture for practitioners and the modern enterprise.</p>
+                <img src="assets/logo.png" height="40" style="margin-bottom: 20px;">
+                <p style="color: var(--muted-2); font-size: 0.9rem;">Governance-first financial reporting architecture for the modern enterprise.</p>
             </div>
             <div class="footer-col">
                 <h4>Platform</h4>
                 <a href="#deliverables">Deliverables</a>
-                <a href="#tour">Interface</a>
-                <a href="pricing.html">Pricing Plans</a>
-                <a href="registration.html">Registration</a>
+                <a href="pricing.html">Pricing</a>
             </div>
             <div class="footer-col">
                 <h4>Company</h4>
-                <a href="#about">Philosophy</a>
+                <a href="#about">About</a>
                 <a href="resources.html">Resources</a>
-                <a href="mailto:info@finspheresolutions.com">Support</a>
-                <a href="#audiences">Solutions</a>
             </div>
             <div class="footer-col">
                 <h4>Legal</h4>
                 <a href="privacy.html">Privacy Policy</a>
-                <a href="terms.html">Terms of Use</a>
-                <a href="popia.html">POPIA Compliance</a>
+                <a href="terms.html">Terms</a>
             </div>
         </div>
         <div class="footer-bottom">
@@ -369,21 +312,17 @@
     </div>
   </footer>
 
-  <!-- AUTOMATIC SLIDER SCRIPT -->
   <script>
     let slideIndex = 0;
     showSlides();
-
     function showSlides() {
       let i;
       let slides = document.getElementsByClassName("slides");
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
-      }
+      for (i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
       slideIndex++;
       if (slideIndex > slides.length) {slideIndex = 1}    
       slides[slideIndex-1].style.display = "block";  
-      setTimeout(showSlides, 4500); // Change image every 4.5 seconds
+      setTimeout(showSlides, 4000); 
     }
   </script>
 
