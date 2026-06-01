@@ -3,196 +3,178 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>FinSphere Solutions — FinSage | Governance-First Accounting</title>
-  <meta name="description" content="FinSage by FinSphere Solutions — IFRS-aligned workflows, audit readiness and operational control for practitioners and enterprises.">
+  <title>FinSphere Solutions | Intelligent Accounting. Always Audit-Ready.</title>
+  <meta name="description" content="A modern accounting platform designed to deliver accurate financial statements and real-time disclosures.">
 
   <link rel="icon" type="image/png" href="assets/logo.png">
 
+  <!-- Inter Font for that clean corporate look -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
 <style>
-  :root{
-    --navy:#0a1638;
-    --deep:#071022;
-    --blue:#2f63c9;
-    --sky:#4b90d2;
-    --teal:#43c7b0;
-    --mint:#59d6ad;
-    --soft:#edf3f8;
-    --white:#f8fbff;
-    --text:#e8f0f8;
-    --muted:#bfd0df;
-    --muted-2:#97abc0;
-    --panel:rgba(8,16,34,0.46);
-    --panel-strong:rgba(8,16,34,0.68);
-    --border:rgba(255,255,255,0.10);
-    --shadow:0 25px 80px rgba(0,0,0,0.26);
-    --radius-xl:32px;
-    --radius-lg:24px;
-    --radius-md:18px;
-    --max:1600px;
+  :root {
+    --navy: #0a1638;
+    --blue: #2f63c9;
+    --teal: #43c7b0;
+    --slate: #475569;
+    --light-bg: #f8fbff;
+    --white: #ffffff;
+    --border: rgba(10, 22, 56, 0.08);
+    --shadow: 0 15px 50px rgba(0, 0, 0, 0.05);
   }
 
-  *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{
-    margin:0;
-    font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-    color:var(--text);
-    background:
-      radial-gradient(circle at 14% 18%, rgba(89,214,173,0.15), transparent 22%),
-      radial-gradient(circle at 83% 14%, rgba(75,144,210,0.12), transparent 24%),
-      linear-gradient(135deg, #051126 0%, #0b1d49 24%, #081224 100%);
-    min-height:100vh;
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    color: var(--navy);
+    background-color: var(--white);
+    line-height: 1.6;
+    overflow-x: hidden;
   }
 
-  body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    pointer-events:none;
-    background:
-      linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
-    background-size:48px 48px;
-    z-index:0;
+  .container { width: min(1300px, 90%); margin: 0 auto; }
+
+  /* NAVIGATION */
+  header {
+    height: 90px;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid var(--border);
   }
+  .header-inner { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+  .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; }
+  .brand img { height: 45px; }
+  .nav { display: flex; gap: 30px; align-items: center; }
+  .nav a { text-decoration: none; color: var(--navy); font-weight: 500; font-size: 0.9rem; transition: 0.3s; }
+  .nav a:hover { color: var(--blue); }
 
-  a{color:inherit; text-decoration:none;}
-  img{max-width:100%;display:block}
-
-  .container{
-    width:min(1600px, calc(100% - clamp(24px, 4vw, 72px)));
-    margin:0 auto;
-    position: relative;
-    z-index: 1;
+  /* BUTTONS */
+  .btn {
+    background: var(--navy);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+    display: inline-block;
   }
-
-  header{
-    position:sticky;
-    top:0;
-    z-index:100;
-    backdrop-filter:blur(14px);
-    background:rgba(5,10,22,0.6);
-    border-bottom:1px solid var(--border);
-  }
-
-  .header-inner{
-    height:82px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-  }
-
-  .brand{ display:flex; align-items:center; gap:14px; }
-  .brand-logo{ width:48px; height:48px; border-radius:14px; overflow:hidden; border:1px solid var(--border); }
-  .brand-copy strong{ display:block; font-size:1rem; color:var(--white); }
-  .brand-copy span{ font-size:0.86rem; color:var(--muted-2); }
-
-  .nav{ display:flex; align-items:center; gap:22px; }
-  .nav a:hover{ color:var(--white); }
-
-  .btn, .btn-ghost{
-    border-radius:999px;
-    padding:12px 24px;
-    font-weight:700;
-    font-size:0.95rem;
-    transition:0.3s;
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-    white-space:nowrap;
-  }
-
-  .btn{ color:white; background:linear-gradient(135deg,var(--blue),var(--teal)); box-shadow:0 10px 30px rgba(47,99,201,0.3); }
-  .btn:hover{ transform:translateY(-2px); box-shadow:0 15px 40px rgba(47,99,201,0.4); }
-  .btn-ghost{ color:var(--white); background:rgba(255,255,255,0.06); border:1px solid var(--border); }
-
-  /* Hero Section */
-  .hero{ padding: 100px 0 60px; text-align: center; }
-  .eyebrow{ 
-    display:inline-flex; align-items:center; gap:10px; padding:8px 16px; border-radius:999px; 
-    background:rgba(255,255,255,0.07); border:1px solid var(--border); margin-bottom:20px;
-  }
-  .hero h1{ font-size:clamp(2.5rem, 6vw, 4.5rem); line-height:1.1; margin:0 0 20px; font-weight:800; }
-  .hero-gradient{ 
-    background:linear-gradient(135deg,#fff 30%, #67d4c9 90%); 
-    -webkit-background-clip:text; 
-    background-clip:text; 
-    -webkit-text-fill-color:transparent; 
-  }
-  .hero p.lead{ font-size:1.2rem; color:var(--muted); max-width:800px; margin:0 auto 40px; line-height:1.6; }
-
-  /* Trust Bar */
-  .trust-bar{ 
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
-    gap: 20px; padding: 40px 0; border-top: 1px solid var(--border); margin-top: 40px;
-  }
-  .trust-item{ text-align: center; }
-  .trust-item strong{ display: block; color: var(--white); font-size: 1.1rem; }
-  .trust-item span{ color: var(--muted-2); font-size: 0.85rem; }
-
-  /* Dashboard Cards & Browser Frame */
-  .section-head{ margin-bottom:60px; text-align: center; }
-  .section-head h2{ font-size:clamp(2rem, 4vw, 3rem); color:var(--white); margin-bottom: 10px;}
-
-  .dashboard-grid{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-    gap: 40px;
-    margin-bottom: 60px;
-  }
-
-  .dashboard-card{
-    background: var(--panel);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: 30px;
+  .btn:hover { background: var(--blue); transform: translateY(-2px); }
+  .btn-outline {
+    border: 1.5px solid var(--navy);
+    color: var(--navy);
+    padding: 12px 26px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
     transition: 0.3s;
   }
-  .dashboard-card:hover{ border-color: var(--teal); background: rgba(8,16,34,0.6); }
+  .btn-outline:hover { background: var(--navy); color: white; }
 
-  .dashboard-badge{
-    display: inline-block; padding: 5px 12px; border-radius: 99px;
-    background: rgba(47,99,201,0.15); color: var(--sky); font-size: 0.75rem;
-    font-weight: 700; text-transform: uppercase; margin-bottom: 15px;
+  /* HERO SECTION */
+  .hero {
+    padding: 120px 0 80px;
+    background: radial-gradient(circle at top right, rgba(67, 199, 176, 0.05), transparent),
+                radial-gradient(circle at bottom left, rgba(47, 99, 201, 0.05), transparent);
+    text-align: center;
+  }
+  .hero h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: 24px;
+    line-height: 1.1;
+  }
+  .hero-gradient {
+    background: linear-gradient(135deg, var(--navy), var(--blue));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .hero p {
+    font-size: 1.25rem;
+    color: var(--slate);
+    max-width: 800px;
+    margin: 0 auto 40px;
   }
 
-  /* The Browser UI Effect */
-  .browser-frame{
-    background: #1a1f2e;
-    border-radius: 10px;
-    border: 1px solid rgba(255,255,255,0.1);
+  /* SECTION STYLING */
+  .section { padding: 100px 0; }
+  .section-alt { background: var(--light-bg); }
+  .tagline { color: var(--blue); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.8rem; margin-bottom: 16px; display: block; }
+  .section h2 { font-size: 2.5rem; letter-spacing: -0.02em; margin-bottom: 20px; }
+  .section p.sub { font-size: 1.1rem; color: var(--slate); max-width: 700px; margin-bottom: 50px; }
+
+  /* CAPABILITIES GRID */
+  .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
+  .cap-card {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    transition: 0.3s;
+    text-decoration: none;
+    color: inherit;
+  }
+  .cap-card:hover { border-color: var(--blue); box-shadow: var(--shadow); }
+  .cap-card h3 { margin: 0 0 15px; font-size: 1.4rem; }
+  .cap-card p { color: var(--slate); margin: 0; }
+
+  /* FEATURE SHOWCASE (Z-Pattern) */
+  .showcase { display: flex; align-items: center; gap: 80px; margin-bottom: 120px; }
+  .showcase:nth-child(even) { flex-direction: row-reverse; }
+  .showcase-text { flex: 1; }
+  .showcase-image { flex: 1.3; }
+  .browser-mockup {
+    border-radius: 12px;
     overflow: hidden;
-    margin-top: 20px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    box-shadow: 0 30px 100px rgba(0,0,0,0.1);
+    border: 1px solid var(--border);
   }
-  .browser-header{
-    background: #252b3d;
-    padding: 10px 15px;
-    display: flex;
-    gap: 6px;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+  .browser-mockup img { width: 100%; display: block; }
+
+  /* ABOUT SECTION */
+  .about-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+  .about-content h2 { margin-top: 0; }
+
+  /* SECURITY & GOVERNANCE */
+  .gov-box {
+    background: var(--navy);
+    color: white;
+    padding: 80px;
+    border-radius: 24px;
+    position: relative;
+    overflow: hidden;
   }
-  .dot{ width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.2); }
-  .browser-frame img{ width: 100%; display: block; transition: 0.5s; }
-  .dashboard-card:hover .browser-frame img{ transform: scale(1.03); }
+  .gov-box h2 { color: var(--teal); }
+  .gov-box p { color: rgba(255,255,255,0.8); max-width: 700px; }
 
-  /* Story/Accordion Section */
-  .story-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:20px; }
-  .story-card{ 
-    background:var(--panel); border:1px solid var(--border); border-radius:28px; 
-    padding:24px; cursor:pointer; transition: 0.3s;
-  }
-  .story-card:hover{ border-color: var(--mint); }
-  .story-card.open .story-body{ max-height:400px; opacity:1; margin-top:15px; }
-  .story-body{ max-height:0; overflow:hidden; opacity:0; transition:0.4s; }
+  /* USER TYPES */
+  .user-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+  .user-card { padding: 50px; border-radius: 16px; border: 1px solid var(--border); }
+  .user-card.practitioner { background: #eef4ff; border-color: #d0e0ff; }
+  .user-card.enterprise { background: #f0fdfa; border-color: #ccfbf1; }
 
-  /* Footer */
-  footer{ padding:60px 0; border-top:1px solid var(--border); margin-top:80px; background:rgba(5,10,22,0.4); }
-  .footer-wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:30px; }
+  /* FOOTER */
+  footer { background: #040816; color: white; padding: 100px 0 50px; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 50px; margin-bottom: 60px; }
+  .footer-logo img { height: 50px; margin-bottom: 20px; }
+  .footer-col h4 { margin-bottom: 25px; color: var(--teal); }
+  .footer-col a { display: block; color: rgba(255,255,255,0.6); text-decoration: none; margin-bottom: 12px; transition: 0.3s; }
+  .footer-col a:hover { color: white; }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; display: flex; justify-content: space-between; font-size: 0.85rem; color: rgba(255,255,255,0.4); }
 
-  @media (max-width: 768px){
-    .dashboard-grid{ grid-template-columns: 1fr; }
-    .nav{ display: none; }
+  @media (max-width: 900px) {
+    .showcase, .about-wrap, .user-grid, .footer-grid { grid-template-columns: 1fr; flex-direction: column; gap: 40px; }
+    .showcase:nth-child(even) { flex-direction: column; }
+    .gov-box { padding: 40px; }
   }
 </style>
 </head>
@@ -200,22 +182,20 @@
 
   <header>
     <div class="container header-inner">
-      <a class="brand" href="#">
-        <div class="brand-logo"><img src="assets/logo.png" alt="FinSage"></div>
-        <div class="brand-copy">
-          <strong>FinSphere Solutions</strong>
-          <span>FinSage SaaS</span>
+      <a href="index.html" class="brand">
+        <img src="assets/logo.png" alt="FinSphere logo">
+        <div style="line-height: 1.1;">
+            <strong style="display: block; font-size: 1.1rem; color: var(--navy);">FinSphere Solutions</strong>
+            <span style="font-size: 0.75rem; color: var(--slate); font-weight: 600; letter-spacing: 0.05em;">FINSAGE PLATFORM</span>
         </div>
       </a>
-
       <nav class="nav">
-        <a href="#dashboards">Dashboards</a>
-        <a href="#platform">Governance</a>
-        <a href="#audiences">Who It Serves</a>
-        <div class="nav-actions">
-          <a class="btn-ghost" href="signin.html">Sign In</a>
-          <a class="btn" href="registration.html">Start Trial</a>
-        </div>
+        <a href="#platform">Platform</a>
+        <a href="#capabilities">Capabilities</a>
+        <a href="#about">About</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="signin.html" style="margin-left: 20px;">Sign In</a>
+        <a href="registration.html" class="btn">Start Free Trial</a>
       </nav>
     </div>
   </header>
@@ -224,216 +204,221 @@
     <!-- HERO SECTION -->
     <section class="hero">
       <div class="container">
-        <div class="eyebrow">
-          <span style="width:8px; height:8px; background:var(--mint); border-radius:50%;"></span>
-          Always Audit-Ready. IFRS Aligned.
-        </div>
-        <h1>
-          <span class="hero-gradient">Financial reporting</span><br>
-          built for control and confidence.
-        </h1>
-        <p class="lead">
-          FinSage is a governance-first accounting platform for practitioners and enterprises. 
-          Manage reporting, audit readiness, and operational discipline in one structured environment.
-        </p>
-        <div style="display:flex; gap:15px; justify-content:center; flex-wrap:wrap;">
-          <a class="btn" href="registration.html" style="padding:16px 40px; font-size:1.1rem;">Start Your Free Trial</a>
-          <a class="btn-ghost" href="#dashboards" style="padding:16px 40px;">Explore Features</a>
-        </div>
-        <p style="font-size:0.85rem; color:var(--muted-2); margin-top:15px;">No credit card required • Choose Practitioner or Enterprise role during signup</p>
-      </div>
-    </section>
-
-    <!-- TRUST SECTION -->
-    <section class="container">
-        <div class="trust-bar">
-            <div class="trust-item">
-                <strong>Bank-Grade Encryption</strong>
-                <span>AES-256 Data Security</span>
-            </div>
-            <div class="trust-item">
-                <strong>Immutable Ledger</strong>
-                <span>Permanent Audit Trails</span>
-            </div>
-            <div class="trust-item">
-                <strong>AWS Hosted</strong>
-                <span>99.9% Uptime Infrastructure</span>
-            </div>
-            <div class="trust-item">
-                <strong>IFRS Compliant</strong>
-                <span>Standardized Workflows</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- DASHBOARDS SHOWCASE -->
-    <section class="section" id="dashboards">
-      <div class="container">
-        <div class="section-head">
-          <h2>The Control Room</h2>
-          <p>Everything you need for industrial-strength financial management.</p>
-        </div>
-
-        <div class="dashboard-grid">
-
-          <!-- CARD 1: AUDIT LOG -->
-          <div class="dashboard-card">
-            <div class="dashboard-badge">Governance & Control</div>
-            <h3>Immutable Audit Trail</h3>
-            <p>Every action is logged. See who did what, and when. Perfect for auditors and internal oversight.</p>
-            <div class="browser-frame">
-              <div class="browser-header"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-              <img src="assets/audit-log.png" alt="Audit Log Interface">
-            </div>
-          </div>
-
-          <!-- CARD 2: ACCOUNTING -->
-          <div class="dashboard-card">
-            <div class="dashboard-badge">Operations</div>
-            <h3>Accounting Control Center</h3>
-            <p>Centralized operations with real-time financial visibility and operational controls.</p>
-            <div class="browser-frame">
-              <div class="browser-header"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-              <img src="assets/accounting-dashboard.png" alt="Accounting Dashboard">
-            </div>
-          </div>
-
-          <!-- CARD 3: LEASE WIZARD -->
-          <div class="dashboard-card">
-            <div class="dashboard-badge">IFRS 16</div>
-            <h3>Lease Accounting Wizard</h3>
-            <p>Automated schedules, ROU calculations, and journal entries. Stay compliant without the math stress.</p>
-            <div class="browser-frame">
-              <div class="browser-header"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-              <img src="assets/lease-wizard.png" alt="Lease Wizard">
-            </div>
-          </div>
-
-          <!-- CARD 4: FINANCIAL STATEMENTS -->
-          <div class="dashboard-card">
-            <div class="dashboard-badge">Reporting</div>
-            <h3>Financial Statements</h3>
-            <p>Generate IFRS statements with integrated disclosures and notes in real-time.</p>
-            <div class="browser-frame">
-              <div class="browser-header"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-              <img src="assets/financial-statements.png" alt="Financial Statements">
-            </div>
-          </div>
-
-          <!-- CARD 5: REVENUE REC -->
-          <div class="dashboard-card">
-            <div class="dashboard-badge">IFRS 15</div>
-            <h3>Revenue Recognition</h3>
-            <p>Track obligations, billing progress, and revenue cycles automatically.</p>
-            <div class="browser-frame">
-              <div class="browser-header"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-              <img src="assets/revenue-recognition.png" alt="Revenue Recognition">
-            </div>
-          </div>
-
-          <!-- CARD 6: VAT & TAX -->
-          <div class="dashboard-card">
-            <div class="dashboard-badge">Compliance</div>
-            <h3>VAT & Tax Management</h3>
-            <p>Simplify submissions and audit-ready reporting with automated tax packs.</p>
-            <div class="browser-frame">
-              <div class="browser-header"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-              <img src="assets/vat-tax.png" alt="VAT & Tax">
-            </div>
-          </div>
-
+        <span class="tagline">Next-Generation Financial Architecture</span>
+        <h1>Intelligent Accounting. <br><span class="hero-gradient">Always Audit-Ready.</span></h1>
+        <p>A modern accounting platform designed to deliver accurate financial statements and real-time disclosures. From transaction capture to financial reporting, we ensure consistency, control, and confidence.</p>
+        <div style="display: flex; gap: 15px; justify-content: center;">
+            <a href="registration.html" class="btn">Get Started Now</a>
+            <a href="#platform" class="btn-outline">Explore Capabilities</a>
         </div>
       </div>
     </section>
 
-    <!-- CORE AUDIENCES -->
-    <section id="audiences" class="section" style="background:rgba(255,255,255,0.02); padding: 80px 0;">
-      <div class="container">
-        <div class="section-head">
-          <h2>Built for Professional Roles</h2>
+    <!-- CAPABILITIES PREVIEW -->
+    <section class="section section-alt" id="capabilities">
+        <div class="container">
+            <div class="section-head">
+                <span class="tagline">The Value of FinSage</span>
+                <h2>What the Platform Delivers</h2>
+                <p class="sub">Balancing operational efficiency with institutional governance.</p>
+            </div>
+            <div class="grid-3">
+                <div class="cap-card">
+                    <h3>End-to-End Coverage</h3>
+                    <p>Support the full accounting lifecycle: capture, adjust, and produce reports within a single environment.</p>
+                </div>
+                <div class="cap-card">
+                    <h3>Real-Time Intelligence</h3>
+                    <p>Financial outputs evolve as transactions post, eliminating reliance on manual reconciliations.</p>
+                </div>
+                <div class="cap-card">
+                    <h3>Audit-Focused Governance</h3>
+                    <p>Strict data integrity rules to support transparency, traceability, and permanent audit readiness.</p>
+                </div>
+                <div class="cap-card">
+                    <h3>Professional Statements</h3>
+                    <p>Generate IFRS-aligned Balance Sheets, P&L, and Cash Flow statements at any point in the cycle.</p>
+                </div>
+                <div class="cap-card">
+                    <h3>Automated Period Closures</h3>
+                    <p>Recurring processes like amortisation and depreciation are handled automatically as periods advance.</p>
+                </div>
+                <div class="cap-card">
+                    <h3>Controlled Access</h3>
+                    <p>Role-based security ensures users interact only with functions appropriate to their responsibility.</p>
+                </div>
+            </div>
         </div>
-        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:30px;">
-          <div class="dashboard-card">
-            <h3 style="color:var(--mint);">For Practitioners</h3>
-            <p>Manage multiple clients, allocate bookkeepers to specific engagements, and track portfolio-wide readiness from a single command center.</p>
-          </div>
-          <div class="dashboard-card">
-            <h3 style="color:var(--sky);">For Enterprise</h3>
-            <p>Internal reporting environments focused on governance, subsidiary structures, and maintaining permanent audit integrity.</p>
-          </div>
-        </div>
-      </div>
     </section>
 
-    <!-- ACCORDION SECTION -->
-    <section id="platform" class="section">
-      <div class="container">
-        <div class="section-head">
-          <h2>Platform Integrity</h2>
+    <!-- DEEP DIVE SHOWCASE (The Images) -->
+    <section class="section" id="platform">
+        <div class="container">
+            
+            <!-- SHOWCASE 1: COMMAND CENTER -->
+            <div class="showcase">
+                <div class="showcase-text">
+                    <span class="tagline">Centralized Command</span>
+                    <h2>The Accounting Command Center</h2>
+                    <p>Your unified workspace for daily operations. Monitor cash on hand, outstanding receivables, and automated work queues in real-time. Gain instant visibility into your net margin trends and financial health metrics without running a single manual report.</p>
+                </div>
+                <div class="showcase-image">
+                    <div class="browser-mockup">
+                        <img src="assets/accounting-command-center.png" alt="Command Center Dashboard">
+                    </div>
+                </div>
+            </div>
+
+            <!-- SHOWCASE 2: IFRS 16 -->
+            <div class="showcase">
+                <div class="showcase-text">
+                    <span class="tagline">IFRS Compliance</span>
+                    <h2>Automated IFRS 16 Lease Wizard</h2>
+                    <p>Eliminate the complexity of lease accounting. Capture terms, calculate ROU assets and liabilities, and post inception journals automatically. FinSage generates the full amortization schedule and handles monthly interest and depreciation entries as you close periods.</p>
+                </div>
+                <div class="showcase-image">
+                    <div class="browser-mockup">
+                        <img src="assets/ifrs16-lease-wizard.png" alt="IFRS 16 Lease Wizard">
+                    </div>
+                </div>
+            </div>
+
+            <!-- SHOWCASE 3: PRACTITIONER -->
+            <div class="showcase">
+                <div class="showcase-text">
+                    <span class="tagline">For Firms & Practitioners</span>
+                    <h2>Practice & Engagement Intelligence</h2>
+                    <p>Designed for professional firms managing high-volume client portfolios. Track engagement readiness, manage team capacity, and perform risk-independence checks across all clients from a single, high-level dashboard.</p>
+                </div>
+                <div class="showcase-image">
+                    <div class="browser-mockup">
+                        <img src="assets/practitioner-dashboard.png" alt="Practitioner Dashboard">
+                    </div>
+                </div>
+            </div>
+
         </div>
-        <div class="story-grid">
-          <div class="story-card" onclick="togglePanel(this)">
-            <h3>Continuous Reporting</h3>
-            <div class="story-body">
-              <p>FinSage ensures reporting remains accurate throughout the cycle, not just at year-end. Real-time updates mean you're always audit-ready.</p>
-            </div>
-          </div>
-          <div class="story-card" onclick="togglePanel(this)">
-            <h3>Traceable Governance</h3>
-            <div class="story-body">
-              <p>Transactions cannot be deleted. Corrections require authorized reversals, ensuring a perfect paper trail for every single figure.</p>
-            </div>
-          </div>
-          <div class="story-card" onclick="togglePanel(this)">
-            <h3>Security Architecture</h3>
-            <div class="story-body">
-              <p>Using bank-grade AES-256 encryption and hosted on secure AWS infrastructure, your financial data is protected by industry-standard protocols.</p>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
 
-    <!-- CONTACT CTA -->
+    <!-- SECURITY & GOVERNANCE SECTION -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="gov-box">
+                <span class="tagline" style="color: white;">Integrity by Design</span>
+                <h2>Governance, Security & Data Integrity</h2>
+                <p>The platform is built on a governance-first architecture. **Posted transactions cannot be deleted.** Where corrections are required, authorized users must process reversing entries, ensuring a complete and transparent audit trail that satisfies international standards.</p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-top: 40px;">
+                    <div>
+                        <strong style="display: block; font-size: 1.2rem; color: var(--teal);">AES-256</strong>
+                        <span style="font-size: 0.8rem;">Bank-grade encryption</span>
+                    </div>
+                    <div>
+                        <strong style="display: block; font-size: 1.2rem; color: var(--teal);">MFA Secure</strong>
+                        <span style="font-size: 0.8rem;">Multi-factor authentication</span>
+                    </div>
+                    <div>
+                        <strong style="display: block; font-size: 1.2rem; color: var(--teal);">Immutable</strong>
+                        <span style="font-size: 0.8rem;">Non-destructive ledger</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT US SECTION -->
+    <section class="section" id="about">
+        <div class="container about-wrap">
+            <div class="about-content">
+                <span class="tagline">Our Philosophy</span>
+                <h2>A New Generation of Financial Reporting</h2>
+                <p>Traditional accounting systems focus primarily on transaction capture, leaving reporting, disclosures, and compliance as manual, end-of-period exercises.</p>
+                <p>FinSage was created to change that. We believe financial reporting should be continuous, controlled, and transparent — not rushed at month-end. By embedding governance into the core flow, we help organizations maintain audit readiness 365 days a year.</p>
+                <a href="registration.html" class="btn-outline">Join the Future</a>
+            </div>
+            <div class="about-image">
+                <div class="browser-mockup">
+                    <img src="assets/financial-statements.png" alt="Financial Reporting">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- USER TYPES -->
+    <section class="section section-alt" id="audiences">
+        <div class="container">
+            <div class="section-head" style="text-align: center;">
+                <h2>Tailored for Professionals</h2>
+                <p class="sub" style="margin: 0 auto 40px;">Select the architecture that fits your organizational goals.</p>
+            </div>
+            <div class="user-grid">
+                <div class="user-card practitioner">
+                    <h3>Accounting Practitioner</h3>
+                    <p>Designed for professional firms managing multiple client entities. Supports multi-client visibility, team allocation, and practice-wide risk management.</p>
+                    <ul style="padding-left: 20px; font-size: 0.9rem; color: var(--slate);">
+                        <li>Portfolio review & Intelligence</li>
+                        <li>Engagement oversight</li>
+                        <li>Team capacity planning</li>
+                    </ul>
+                </div>
+                <div class="user-card enterprise">
+                    <h3>Enterprise Reporting</h3>
+                    <p>Designed for internal finance teams focused on deep entity governance. Ideal for primary organizations with complex subsidiary and associate structures.</p>
+                    <ul style="padding-left: 20px; font-size: 0.9rem; color: var(--slate);">
+                        <li>Subsidiary & Associate logic</li>
+                        <li>Operational reporting control</li>
+                        <li>Internal audit readiness</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT / CTA -->
     <section class="section">
-      <div class="container">
-        <div style="background: linear-gradient(135deg, rgba(47,99,201,0.2), rgba(8,18,34,0.8)); padding: 60px; border-radius: 34px; border: 1px solid var(--border); text-align: center;">
-            <h3>Ready for better financial discipline?</h3>
-            <p style="color:var(--muted); margin-bottom: 30px;">Start your 14-day free trial today. No credit card required.</p>
-            <div style="display:flex; gap:15px; justify-content:center;">
-              <a class="btn" href="registration.html">Create My Account</a>
-              <a class="btn-ghost" href="mailto:info@finspheresolutions.com">Contact Sales</a>
+        <div class="container" style="text-align: center;">
+            <h2>Start with a clearer foundation.</h2>
+            <p class="sub" style="margin: 0 auto 30px;">Begin your 14-day trial or contact our team for a personal walkthrough.</p>
+            <div style="display: flex; gap: 15px; justify-content: center;">
+                <a href="registration.html" class="btn">Start Free Trial</a>
+                <a href="mailto:info@finspheresolutions.com" class="btn-outline">Contact Sales</a>
             </div>
         </div>
-      </div>
     </section>
   </main>
 
   <footer>
     <div class="container">
-      <div class="footer-wrap">
-        <div>
-          <strong style="color:var(--white);">FinSphere Solutions</strong><br>
-          © 2024. All rights reserved.
+        <div class="footer-grid">
+            <div class="footer-col footer-logo">
+                <img src="assets/logo.png" alt="FinSphere Logo">
+                <p style="color: rgba(255,255,255,0.5); font-size: 0.9rem;">Building the future of continuous, governance-first accounting and financial reporting.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Platform</h4>
+                <a href="#platform">Wizards</a>
+                <a href="#capabilities">Reporting</a>
+                <a href="#audiences">Practitioners</a>
+                <a href="pricing.html">Pricing</a>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <a href="#about">About Us</a>
+                <a href="mailto:info@finspheresolutions.com">Contact</a>
+                <a href="resources.html">Resources</a>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Use</a>
+                <a href="popia.html">POPIA Compliance</a>
+            </div>
         </div>
-        <div>
-          info@finspheresolutions.com<br>
-          +266 62775416
+        <div class="footer-bottom">
+            <div>© 2024 FinSphere Solutions. All rights reserved.</div>
+            <div>Maseru, Lesotho · +266 62775416</div>
         </div>
-        <div style="display:flex; gap:20px;">
-          <a href="privacy.html">Privacy</a>
-          <a href="terms.html">Terms</a>
-          <a href="popia.html">POPIA</a>
-        </div>
-      </div>
     </div>
   </footer>
-
-  <script>
-    function togglePanel(card){
-      card.classList.toggle('open');
-    }
-  </script>
 
 </body>
 </html>
